@@ -139,3 +139,23 @@ Object.keys(products).forEach(category => {
   categoryDiv.appendChild(productList);
   section.appendChild(categoryDiv);
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.getElementById("product-section");
+
+  const electronics = products.Electronics;
+
+  let html = '';
+
+  electronics.forEach(product => {
+    html += 
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.title}" width="200">
+        <h3>${product.title}</h3>
+        <p>${product.description}</p>
+        <a href="${product.link}" target="_blank">Buy Now</a>
+      </div>
+    ;
+  });
+
+  section.innerHTML = html;
+});
